@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;/*incluye el borde y el relleno dentro del tamaño de la caja */
+}
+
+body {
+    color:white;
+    background-image: url('../Imagenes/fondo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Opcional: Para que el fondo no se mueva al hacer scroll */
+}
+
+.encabezado{
+    background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    text-align: center;
+}
+
+.Pedir-datos{
+    border: 10px solid rgb(228, 123, 17);
+    border-radius: 1px;
+    width: 100%; /* Ocupa toda el ancho de la pantalla */
+    height: 60%; /* Ocupa toda la altura de la pantalla */
+    position: absolute; /* Posicionamiento absoluto para ubicarlo */
+    top: 50; /* Alineado al borde superior */
+    left: 0; /* Alineado al borde izquierdo */
+    background-color: rgb(0, 0, 0); /* Solo para que lo veas claramente */
+    opacity: 0.8;
+}
+
+p {
+    text-align: justify;
+    font-size: 25px;
+    margin: 15px;
+}
+
+.Formulario-Composicion{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    align-items: center;
+    justify-content: center
+}
+
+.contenedor{
+    display:block;
+    width: 100%;
+    max-width: 470px; /* Limita el ancho si es necesario */
+    padding: 5px; /* Espacio interno para texto visible */
+    font-size: 25;
+    margin:8px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;  
+}
+
+
+
+
+.boton{
+    display: block;
+    width: 40%; /* O el ancho que necesites */
+    margin: auto;
+    padding: 10px 20px; /* Tamaño del botón */
+    background-color: hsl(38, 90%, 44%); /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Apunta con el cursor */
+    font-size: 25px;
+
+    
+}               
+
+.boton:hover {
+    background-color: hwb(12 11% 24%);
+}
+
+.toast {
+    display: none; /* Oculta el toast por defecto */
+    position: fixed; /* Posición fija */
+    bottom: 400px; /* Distancia desde la parte inferior */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta la posición horizontal */
+    background-color: #333; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    animation: fadeInOut 2s ease;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px); /* Desplazamiento inicial */
+    }
+    10% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0); /* Posición final */
+    }
+    90% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0); /* Mantiene visible */
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px); /* Desplazamiento final */
+    }
+}

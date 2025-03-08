@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <link rel="icon" href="Imagenes/Leonardo_Phoenix_09_Disea_un_logo_moderno_y_profesional_para_u_1.ico" type="image/x-icon">
+        <link href="style/1_style_comp.css" rel="stylesheet" type="text/css" >
+        
+        <meta  charset='UTF-8'/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="descrition" content="pagina web para el calculo de la templebalidad, utilizando la norma ASTM A255 20a, se utilizara la composicion del acero y el programa mostrara el diagrama tt mas parecido a la composicion dada.">
+        <meta name="keywords" content="tratamientos termicos, ingenieria, metalurgica, programacion, Desarrollo, ensayo Jominy, Templabilidad, temple, composicion quimica">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="cache-control" content="no-cache">
+        <title>Templabilimeter</title>
+    </head>
+    <body>
+        
+        <header class="encabezado">
+            <h1>TEMPLABILIMETER</h1>
+        </header>
+        <main>
+            <div class="Pedir-datos">
+                <p>A continuación, podrá ingresar la composición química del acero en estudio, lo que permitirá calcular el Di (diámetro ideal) y construir la curva Jominy para ese acero.</p>
+                <form action="" class="Formulario-Composicion">
+                    <input class="contenedor" type="number" step="0.01" name="Carbono" placeholder="Ingrese el contenido en Carbono">
+                    <input class="contenedor" type="number" step="0.01" name="Manganeso" placeholder="Ingrese el contenido en Manganeso">
+                    <input class="contenedor" type="number" step="0.01" name="Silicio" placeholder="Ingrese el contenido en Silicio">
+                    <input class="contenedor" type="number" step="0.01" name="Niquel" placeholder="Ingrese el contenido en Niquel">
+                    <input class="contenedor" type="number" step="0.01" name="Cromo" placeholder="Ingrese el contenido en Cromo">
+                    <input class="contenedor" type="number" step="0.01" name="Molibdeno" placeholder="Ingrese el contenido en Molibdeno">
+                    <input class="contenedor" type="number" step="0.01" name="Cobre" placeholder="Ingrese el contenido en Cobre">
+                    <input class="contenedor" type="number" step="0.01" name="Vanadio" placeholder="Ingrese el contenido en Vanadio">
+                    <input class="contenedor" type="number" step="0.01" name="Zirconio" placeholder="Ingrese el contenido en Zirconio">
+                </form>
+                <button class="boton"  type="button">Calcular</button>
+            </div>
+        </main>
+        <div id="toast" class="toast"></div>
+        <script type='module' src="JavaScript/Sin Boro/1main.js" ></script>
+        
+        <script type='module' src="JavaScript/Sin Boro/1avalidacionDatos.js" ></script>
+
+    </body>
+    
+
+</html>
