@@ -1,1 +1,6 @@
-
+# Asegurarse de que no se ignoren las imágenes
+!Imagenes/
+!*.png
+!*.jpg
+!*.jpeg
+!*.gif
