@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset='UTF-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página web para el cálculo de la templabilidad, utilizando la norma ASTM A255 20a, se utilizará la composición del acero y el programa mostrará el diagrama TT más parecido a la composición dada.">
+    <meta name="keywords" content="tratamientos térmicos, ingeniería, metalúrgica, programación, desarrollo, ensayo Jominy, templabilidad, temple, composición química">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="no-cache">
+    <link rel="icon" href="Imagenes/iconoTemplabilimeter.ico" type="image/x-icon">
+    <link href="style/sinBoroDatos.css" rel="stylesheet" type="text/css">
+    <title>Templabilimeter</title>
+</head>
+<body>
+    <header class="encabezado">
+        <h1>TEMPLABILIMETER</h1>
+    </header>
+    <main>
+        <div class="Pedir-datos">
+            <p>A continuación, podrá ingresar la composición química del acero en estudio, lo que permitirá calcular el Di (diámetro ideal) y construir la curva Jominy para ese acero.</p>
+            <form action="" class="Formulario-Composicion">
+                <!-- Se usa el atributo autocomplete para facilitar la experiencia -->
+                <input class="contenedor" type="number" step="0.01" name="Carbono" placeholder="Ingrese el contenido en C" autocomplete="off">
+                <input class="contenedor" type="number" step="0.01" name="Manganeso" placeholder="Ingrese el contenido en Mn" autocomplete="off">
+                <input class="contenedor" type="number" step="0.01" name="Silicio" placeholder="Ingrese el contenido en Si" autocomplete="off">
+                <input class="contenedor" type="number" step="0.01" name="Niquel" placeholder="Ingrese el contenido en Ni" autocomplete="off">
+                <input class="contenedor" type="number" step="0.01" name="Cromo" placeholder="Ingrese el contenido en Cr" autocomplete="off">
+                <input class="contenedor" type="number" step="0.01" name="Molibdeno" placeholder="Ingrese el contenido en Mo" autocomplete="off">
+                <input class="contenedor" type="number" step="0.01" name="Cobre" placeholder="Ingrese el contenido en Cu" autocomplete="off">
+                <input class="contenedor" type="number" step="0.01" name="Vanadio" placeholder="Ingrese el contenido en Va" autocomplete="off">
+                <input class="contenedor" type="number" step="0.01" name="Zirconio" placeholder="Ingrese el contenido en Zr" autocomplete="off">
+            </form>
+            <button class="boton" type="button">Calcular</button>
+        </div>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script type="module" src="sinBoroScript/1main.js"></script>
+    <script type="module" src="sinBoroScript/1avalidacionDatos.js"></script>
+</body>
+</html>
