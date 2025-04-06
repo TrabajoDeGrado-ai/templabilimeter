@@ -1,0 +1,152 @@
+/* =========================
+   Reset Básico
+   ========================= */
+/* Asegura que padding y border se incluyan en el tamaño total de cada elemento */
+* {
+    box-sizing: border-box; /* Incluye el borde y el relleno en el tamaño total de la caja */
+  }
+  
+  /* =========================
+     Estilo General del Body
+     ========================= */
+  /* Establece márgenes, fuente y fondo de la página */
+  body {
+    margin: 0; /* Elimina márgenes por defecto */
+    font-family: 'Segoe UI', sans-serif; /* Fuente moderna y legible */
+    background-image: url('../Imagenes/fondo.png'); /* Imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-repeat: no-repeat; /* No repite la imagen de fondo */
+    background-attachment: fixed; /* Fija el fondo al hacer scroll */
+    color: #ffffff; /* Color base del texto */
+  }
+  
+  /* =========================
+     Encabezado
+     ========================= */
+  /* Estilo para el header que contiene el título principal */
+  .encabezado {
+    background: transparent; /* Fondo transparente */
+    text-align: center; /* Centra el texto horizontalmente */
+    font-size: 2em; /* Tamaño grande para destacar el título */
+    margin: 1em 0; /* Espaciado vertical */
+    color: #f07d25; /* Color relacionado con la temática de temple */
+  }
+  
+  /* =========================
+     Contenedor "Pedir-datos"
+     ========================= */
+  /* Estilo del contenedor principal donde se ingresan los datos */
+  .Pedir-datos {
+    background: linear-gradient(145deg, #a65836, #ffeae4); /* Fondo degradado cálido */
+    border-radius: 1.5em; /* Bordes redondeados para un look moderno */
+    width: 100%; /* Ocupa el 90% del ancho disponible */
+    max-width: 1000px; /* Ancho máximo para evitar que sea demasiado ancho */
+    padding: 2.5em; /* Espacio interno amplio para separar el contenido de los bordes */
+    margin: 2em auto; /* Centrado horizontal con margen vertical */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+    opacity: 0.95; /* Ligeramente translúcido para suavizar el look */
+  }
+  
+  /* =========================
+     Párrafos en "Pedir-datos"
+     ========================= */
+  /* Ajusta la tipografía para facilitar la lectura del texto */
+  .Pedir-datos p {
+    text-align: justify; /* Justifica el texto para mayor legibilidad */
+    font-size: 1.2em; /* Tamaño de fuente aumentado */
+    margin: 15px 0; /* Espacio vertical entre párrafos */
+  }
+  
+  /* =========================
+     Formulario de Composición
+     ========================= */
+  /* Utiliza grid para organizar los inputs en tres columnas iguales */
+  .Formulario-Composicion {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    gap: 10px; /* Espacio uniforme entre celdas */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* =========================
+     Estilo de los Inputs (contenedor)
+     ========================= */
+  /* Estiliza los inputs para que sean claros y permitan desplazamiento si el contenido es muy largo */
+  .contenedor {
+    display: block;
+    width: 100%; /* Ocupa todo el ancho de su contenedor */
+    max-width: 500px; /* Ancho máximo para mantener consistencia */
+    padding: 10px; /* Espaciado interno para que el texto no toque los bordes */
+    font-size: 1.2em; /* Fuente legible para el input */
+    margin: 8px auto; /* Centrado horizontal con margen vertical */
+    text-align: center; /* Texto centrado dentro del input */
+    border: 2px solid #e26709; /* Borde con color que complementa el fondo */
+    border-radius: 8px; /* Bordes suavemente redondeados */
+    overflow-x: auto; /* Permite scroll horizontal si el contenido es extenso */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  }
+  
+  /* =========================
+     Botón "Calcular"
+     ========================= */
+  /* Estiliza el botón para hacerlo atractivo y moderno con transiciones suaves */
+  .boton {
+    display: block;
+    width: 40%; /* Ancho del botón relativo al contenedor */
+    margin: 1em auto; /* Centrado horizontal */
+    padding: 12px 20px; /* Espaciado interno para un clic cómodo */
+    background-color: hsl(38, 90%, 44%); /* Color de fondo vibrante */
+    color: white; /* Texto en blanco */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    font-size: 1.2em; /* Fuente adecuada para el botón */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones para efecto hover */
+  }
+  
+  .boton:hover {
+    background-color: hsl(38, 90%, 40%); /* Fondo ligeramente más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Aumenta el tamaño levemente para dar efecto interactivo */
+  }
+  
+  /* =========================
+     Toast (notificación emergente)
+     ========================= */
+  /* Estilo para la notificación emergente que se muestra temporalmente */
+  .toast {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posicionado de forma fija en la pantalla */
+    bottom: 40%; /* Ubicación desde el fondo */
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Ajusta la posición horizontal para centrar */
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    z-index: 1000; /* Se coloca por encima de otros elementos */
+    animation: fadeInOut 2s ease; /* Animación para mostrar y ocultar el toast */
+  }
+  
+  /* =========================
+     Animación para el Toast
+     ========================= */
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(20px); /* Desplazamiento inicial */
+    }
+    10% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0); /* Posición final */
+    }
+    90% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0); /* Mantiene visible */
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(20px); /* Desplazamiento final */
+    }
+  }
+  

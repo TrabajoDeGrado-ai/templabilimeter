@@ -1,0 +1,157 @@
+/* Quita el margen por defecto y define una fuente moderna y clara */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url('../Imagenes/fondo.png');
+  }
+  
+  /* Estilo del contenedor principal de navegación */
+  nav {
+    background-color: #e26709;  /* Color rojo naranja para el fondo */
+    display: flex;              /* Distribuye los elementos horizontalmente */
+    align-items: center;        /* Centra verticalmente los elementos */
+    padding: 0.5em 1em;         /* Espaciado interno: arriba/abajo 0.5em, lados 1em */
+  }
+  
+  /* Estilo base de cada enlace dentro del menú */
+  nav a {
+    color: white;               /* Texto blanco */
+    text-decoration: none;      /* Quita el subrayado */
+    margin: 0 1em;              /* Espacio horizontal entre enlaces */
+    font-weight: 500;           /* Peso medio del texto */
+    transition: color 0.3s ease;/* Transición suave cuando cambia de color */
+    padding: 0.5em;             /* Espacio interno para mejor clicabilidad */
+    display: block;             /* Hace que cada <a> se comporte como bloque */
+    position: relative;         /* Necesario para posicionar submenús */
+  }
+  
+  /* Efecto al pasar el mouse: cambia a color dorado */
+  nav a:hover {
+    color: #ffc107;
+  }
+  
+  /* Estilo para la caja que actúa como logo o inicio */
+  .logo {
+    background-color: white;     /* Le da fondo blanco al logo */
+    border-radius: 1em;          /* Bordes redondeados para estética */
+    margin-right: 2em;           /* Espacio entre el logo y las demás opciones */
+    padding: 0.2em;               /* Menos espacio interno */             /* Espacio interno */
+    display: flex;               /* Para alinear correctamente la imagen */
+    align-items: center;         /* Centra verticalmente la imagen */
+  }
+  
+  /* Estilo para la imagen .ico del logo */
+  .logo img {
+    height: 50px;                /* Tamaño del ícono */
+    width: 50px;                 /* Forzamos a que sea cuadrado */
+    border-radius: 50%;          /* Lo convierte en círculo */
+    display: block;              /* Elimina márgenes extra */
+    object-fit: cover;           /* Corta las partes que sobren para que se vea centrado */
+              /* Elimina espacios innecesarios alrededor */
+  }
+  
+  /* Agrupa un enlace principal que tendrá submenús */
+  .dropdown {
+    position: relative;          /* Para posicionar correctamente el submenú */
+  }
+  
+  /* Estilo del contenedor de submenús */
+  .dropdown-menu {
+    display: none;               /* Oculto por defecto */
+    margin: 0px;
+    position: absolute;          /* Aparece flotando debajo del enlace */
+    background-color: #ad5804;   /* naranja más oscuro */
+    top: 100%;                   /* Justo debajo del enlace */
+    left: 0;                     /* Alineado a la izquierda */
+    min-width: auto;            /* Ancho mínimo */
+    z-index: 999;                /* Se pone por encima de otros elementos */
+    border-radius: 0 0 6px 6px;  /* Bordes redondeados abajo */
+  }
+  
+  /* Estilo de cada opción dentro del submenú */
+  .dropdown-menu a {
+    margin: 0;
+    padding: 0.5em 1em;
+    color: white;
+    font-weight: normal;
+  }
+  
+  /* Efecto hover en el submenú */
+  .dropdown-menu a:hover {
+    background-color: #f0a131;  /* Fondo más claro al pasar el mouse */
+    color: #ffc107;             /* Texto dorado */
+  }
+  
+  /* Cuando el usuario pone el cursor encima del contenedor, se muestra el submenú */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+   /* Estilo de los textos del menú */
+   .dropdown-menu p {
+    color: white;
+    margin: 0.5em 0;
+    }
+  
+  /* Ajustes para pantallas pequeñas como celulares */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;     /* Los enlaces se apilan verticalmente */
+      align-items: flex-start;    /* Alineados al inicio del nav */
+    }
+  
+    .dropdown-menu {
+      position: relative;         /* Ahora fluye con el contenido */
+      top: auto;
+      left: auto;
+    }
+  
+    nav a {
+      margin: 0.5em 0;            /* Espaciado vertical entre enlaces */
+    }
+   
+    
+  }
+
+
+/* Contenedor visual de bienvenida */
+.contenido-principal {
+  background: linear-gradient(145deg, #a65836, #ffeae4); /* Fondo con degradado cálido diagonal */
+  border-radius: 1.5em; /* Bordes redondeados para dar suavidad al contenedor */
+  padding: 2.5em; /* Espacio interior para separar el texto del borde */
+  max-width: 900px; /* Ancho máximo del contenedor */
+  margin: 2em auto; /* Margen superior e inferior, centrado horizontal */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  text-align: center; /* Centra el texto dentro del contenedor */
+  color: #333; /* Color base del texto */
+  font-size: 1.1em; /* Tamaño general de fuente ligeramente aumentado */
+}
+
+/* Título principal */
+.contenido-principal h1 {
+  font-size: 2.5em; /* Título grande para destacar */
+  color: #990000; /* Color fuerte relacionado con el tema térmico del software */
+  margin-bottom: 0.3em; /* Espacio debajo del título */
+}
+
+/* Lista de beneficios */
+.contenido-principal ul {
+  list-style: none; /* Quita los punticos de la lista */
+  padding-left: 0; /* Quita espacio a la izquierda */
+  text-align: left; /* Alinea el texto de la lista a la izquierda */
+  max-width: 790px; /* Limita el ancho para que no se vea muy estirada */
+  margin: 1.5em auto; /* Centra horizontalmente y agrega espacio arriba y abajo */
+}
+
+/* Ícono al inicio de cada item de la lista */
+.contenido-principal ul li::before {
+  content: "⚙️"; /* Agrega un emoji antes de cada elemento como bullet personalizado */
+  margin-right: 0.5em; /* Espacio entre el emoji y el texto */
+}
+
+/* Espaciado entre los elementos de la lista */
+.contenido-principal ul li {
+  margin-bottom: 0.7em; /* Espacio inferior entre ítems */
+}
+
+
+  

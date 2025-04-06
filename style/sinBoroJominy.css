@@ -1,0 +1,196 @@
+/* =========================
+   Reset Básico
+   ========================= */
+   * {
+    box-sizing: border-box; /* Incluye el borde y el padding en el tamaño total de cada elemento */
+}
+
+/* =========================
+   Estilo General del Body
+   ========================= */
+/* Configura la fuente, color de texto y fondo de la página */
+body {
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url('../Imagenes/fondo.png'); /* Imagen de fondo */
+    background-size: cover; /* La imagen cubre toda la pantalla */
+    background-repeat: no-repeat; /* No se repite la imagen */
+    background-attachment: fixed; /* Fondo fijo al hacer scroll */
+    /* Eliminamos overflow para evitar scroll, pero se debe tener cuidado que no corte contenido */
+    overflow: hidden;
+}
+
+/* =========================
+   Encabezado
+   ========================= */
+/* Estilo para el header que contiene el título */
+.encabezado {
+    background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em; /* Tamaño grande para destacar 
+    el título */
+    height: 40px;
+    text-align: center;
+    margin: 1em 0;
+    color: #e16a2a; /* Color temático */
+}
+
+/* =========================
+   Main: Contenedor principal
+   ========================= */
+/* Se centra el contenido vertical y horizontalmente en la pantalla */
+main {
+    display: flex;
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    min-height: calc(100vh - 80px); /* Asegura que main ocupe al menos el alto de la ventana menos el header (ajusta si el header cambia) */
+}
+
+/* =========================
+   Contenedor "Contenedor"
+   ========================= */
+/* Estilo del contenedor que agrupa el gráfico y el texto */
+.Contenedor {
+    background: linear-gradient(145deg, #a65836, #ffeae4); /* Fondo degradado cálido */
+    border-radius: 1.5em; /* Bordes redondeados */
+    width: 90%; /* Ocupa el 90% del ancho disponible */
+    max-width: 1700px; /* Ancho máximo */
+    height: 580px; /* Altura ajustable según contenido */
+    padding: 2.5em; /* Espacio interno amplio */
+    margin: 0.5em auto 2em auto; /* Margen superior reducido a 0.5em */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+    opacity: 0.95; /* Ligero efecto translúcido */
+    display: grid; /* Organiza el contenido en grid */
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales para la sección izquierda y derecha */
+    gap: 20px; /* Espacio entre columnas */
+}
+
+/* =========================
+   Sección Izquierda (Texto)
+   ========================= */
+#izquierda {
+    grid-column: 1; /* Ocupa la primera columna del grid */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#InformacionJ {
+    text-align: justify; /* Texto justificado para mayor legibilidad */
+    font-size: 1.5em; /* Tamaño de fuente mayor */
+    margin: 0 20px;
+    color: #fff; /* Texto blanco */
+}
+
+/* =========================
+   Sección Derecha (Gráfico y Título)
+   ========================= */
+#derecha {
+    grid-column: 2; /* Ocupa la segunda columna del grid */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#Jominychart {
+    /* Área del gráfico */
+    border: 2px solid rgb(228, 123, 17); /* Borde con color complementario */
+    border-radius: 6px; /* Bordes redondeados */
+    background-color: white !important; /* Fondo blanco para contraste */
+    width: 600px;  /* Ancho fijo (ajustable según necesidades) */
+    height: 450px; /* Altura fija */
+    margin-top: 15px; /* Espacio superior reducido */
+    margin-right: 35px;
+    opacity: 1 !important;
+    position: relative;
+}
+
+#Titulo-imagen {
+    text-align: center;
+    font-size: 2.5em; /* Tamaño destacado para el título del gráfico */
+    margin-top: 5px;
+    color: #990000; /* Color temático */
+}
+
+/* =========================
+   Botón (si se requiere)
+   ========================= */
+.boton {
+    display: block;
+    width: 40%;
+    margin: 1em auto;
+    padding: 12px 20px;
+    background-color: hsl(38, 59%, 46%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boton:hover {
+    background-color: hsl(38, 59%, 40%);
+    transform: scale(1.05);
+}
+
+/* =========================
+   Toast (Notificación emergente)
+   ========================= */
+.toast {
+    text-align: center;
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    bottom: 40%; /* Posición desde el fondo */
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    animation: fadeInOut 2s ease;
+}
+
+/* =========================
+   Animación para el Toast
+   ========================= */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    10% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    90% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+}
+
+/* =========================
+   Responsividad para pantallas pequeñas
+   ========================= */
+@media (max-width: 768px) {
+    .Contenedor {
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+        padding: 1.5em;
+    }
+    
+    #Jominychart {
+        width: 90%; /* Ancho ajustado para móviles */
+        height: auto;
+        margin: 20px auto;
+    }
+    
+    #Titulo-imagen {
+        font-size: 2em;
+    }
+}
